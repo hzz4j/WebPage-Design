@@ -31,6 +31,7 @@ body{
 .form-controller{
     margin: 20px 0 40px;
     position: relative;
+    width: 300px;
 }
 
 .form-controller input{
@@ -64,8 +65,12 @@ body{
     transition: 0.3s cubic-bezier(1,-1.1, 0.16, 2.24);
 }
 
-/* 当input focus的时候改变label样式 */
-.form-controller input:focus + label span{
+/**
+    当input focus的时候改变label样式,
+    或者当input中有值的时候改变该样式 需要input有required属性
+*/
+.form-controller input:focus + label span,
+.form-controller input:valid + label span{
     color: lightblue;
     transform: translateY(-30px);
 }
