@@ -10,24 +10,15 @@ next.addEventListener("click",event => {
     if(count>circles.length){
         count = circles.length;
     }
-
-    console.log(count);
-    console.log(circles);
     _update();
-    
-
 })
 
 
 prev.addEventListener('click',event => {
     count--;
-
     if(count < 1){
         count = 1
     }
-
-    console.log(count);
-    console.log(circles);
     _update();
 })
 
@@ -43,7 +34,6 @@ function _update(){
 
     //  进度条
     const precentWidth = ((count-1) / (circles.length-1))*100;
-    console.log(precentWidth)
     progress.style.width = precentWidth+"%";
 
     // 更新btn状态
