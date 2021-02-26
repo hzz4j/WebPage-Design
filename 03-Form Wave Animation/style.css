@@ -30,9 +30,11 @@ body{
 
 .form-controller{
     margin: 20px 0 40px;
+    position: relative;
 }
 
 .form-controller input{
+    display: block;
     background-color: transparent;
     border: 0;
     border-bottom: 2px #fff solid;
@@ -45,9 +47,28 @@ body{
 
 .form-controller input:focus{
     outline: 0;
+    border-bottom: 1px lightblue solid;
 }
 
 
+.form-controller label{
+    position: absolute;
+    top: 15px;
+    left: 0;;
+}
+
+.form-controller label span{
+    font-size: 18px;
+    display: inline-block;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(1,-1.1, 0.16, 2.24);
+}
+
+/* 当input focus的时候改变label样式 */
+.form-controller input:focus + label span{
+    color: lightblue;
+    transform: translateY(-30px);
+}
 
 
 .btn{
@@ -77,3 +98,5 @@ body{
     text-decoration: none;
     color: lightblue;
 }
+
+
