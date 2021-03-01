@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #f0f0f0;
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.faq-container{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq{
+    overflow: hidden;
+    margin: 20px auto;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #9fa4a8;
+    position: relative;
+    /* 动画效果 */
+    transition: 0.3s ease;  
+}
+
+.faq-text{
+    display: none;
+}
+
+.faq.active{
+    background-color: #fff;
+    box-shadow:  0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq.active .faq-text{
+    display: block;
+}
+
+
+.faq.active::before,
+.faq.active::after{
+    content: "\f075";
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+.faq.active::before{
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+/*  按钮 */
+.faq-toggle{
+    background-color: transparent;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    border: 0;
+    border-radius: 50px;
+    font-size: 16px;
+    height: 30px;
+    width: 30px;
+
+}
+
+.faq-toggle:focus{
+    outline: 0;
+}
+
+.faq-toggle .fa-times{
+    display: none;
+}
+
+.faq.active .faq-toggle{
+    background-color: #9fa4a8;
+}
+
+.faq.active .faq-toggle .fa-times{
+    color: #fff;
+    display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down{
+    display: none;
+}
